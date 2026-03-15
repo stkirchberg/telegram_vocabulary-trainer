@@ -166,7 +166,7 @@ button:active {
     opacity: 0.9;
 }
 
-/* --- Aktualisierte Formatierung für Set-Titel-Eingabe und Set-Listenelemente --- */
+
 #selection-screen .input-group {
     display: flex;
     gap: 10px;
@@ -174,14 +174,14 @@ button:active {
 }
 
 #selection-screen #set-title-input {
-    flex-grow: 1; /* Nimmt den verbleibenden Platz ein */
-    margin-bottom: 0; /* Entfernt den unteren Rand für die Flex-Ausrichtung */
+    flex-grow: 1; 
+    margin-bottom: 0; 
 }
 
 #selection-screen .btn-primary {
-    width: auto; /* Breite basierend auf dem Inhalt */
-    padding: 14px; /* Quadratische Form für das Plus-Symbol */
-    font-size: 20px; /* Größeres Plus-Symbol */
+    width: auto;
+    padding: 14px;
+    font-size: 20px; 
     margin-bottom: 0;
 }
 
@@ -217,7 +217,7 @@ button:active {
     font-size: 13px;
     margin-bottom: 0;
 }
-/* ... restlicher CSS-Code bleibt unverändert ... */
+
 
 /* --- QUIZ ELEMENTS --- */
 .progress-container {
