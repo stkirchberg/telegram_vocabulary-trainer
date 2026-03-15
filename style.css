@@ -166,6 +166,25 @@ button:active {
     opacity: 0.9;
 }
 
+/* --- Aktualisierte Formatierung für Set-Titel-Eingabe und Set-Listenelemente --- */
+#selection-screen .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+#selection-screen #set-title-input {
+    flex-grow: 1; /* Nimmt den verbleibenden Platz ein */
+    margin-bottom: 0; /* Entfernt den unteren Rand für die Flex-Ausrichtung */
+}
+
+#selection-screen .btn-primary {
+    width: auto; /* Breite basierend auf dem Inhalt */
+    padding: 14px; /* Quadratische Form für das Plus-Symbol */
+    font-size: 20px; /* Größeres Plus-Symbol */
+    margin-bottom: 0;
+}
+
 .set-item {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(5px);
@@ -179,7 +198,26 @@ button:active {
     animation: item-fade-in 0.5s ease-out both;
 }
 
+.set-item .set-info {
+    display: flex;
+    flex-direction: column;
+}
+
 .set-item span { font-size: 16px; font-weight: 600; color: #ffffff; }
+.set-item .card-count { font-size: 12px; color: var(--text-muted); }
+
+.set-item .button-group {
+    display: flex;
+    gap: 8px;
+}
+
+.set-item .btn-secondary, .set-item .btn-primary {
+    width: auto;
+    padding: 10px 16px;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+/* ... restlicher CSS-Code bleibt unverändert ... */
 
 /* --- QUIZ ELEMENTS --- */
 .progress-container {

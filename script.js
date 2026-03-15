@@ -25,10 +25,13 @@ function renderSets() {
         const div = document.createElement('div');
         div.className = 'set-item';
         div.innerHTML = `
-            <span>${title} (${sets[title].length} Karten)</span>
-            <div style="display:flex; gap:10px;">
-                <button onclick="editSet('${title}')" style="padding:8px">Bearbeiten</button>
-                <button onclick="startQuiz('${title}')" class="btn-primary" style="padding:8px">Starten</button>
+            <div class="set-info">
+                <span>${title}</span>
+                <span class="card-count">${sets[title].length} Karten</span>
+            </div>
+            <div class="button-group">
+                <button onclick="editSet('${title}')" class="btn-secondary">Bearbeiten</button>
+                <button onclick="startQuiz('${title}')" class="btn-primary">Starten</button>
             </div>
         `;
         list.appendChild(div);
