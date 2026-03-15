@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vocab Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs"></div>
+    
+    <div id="app">
+        <main id="selection-screen" class="glass-container">
+            <h1>My Sets</h1>
+            <div class="input-group">
+                <input type="text" id="set-title-input" placeholder="New Set Name...">
+                <button onclick="createNewSet()" class="btn-primary">+</button>
+            </div>
+            <div id="set-list"></div>
+        </main>
+
+        <main id="editor-screen" class="glass-container hidden">
+            <button class="btn-text" onclick="showScreen('selection-screen')">← Back</button>
+            <h2 id="editing-set-title">Edit Set</h2>
+            <div class="input-card">
+                <input type="text" id="word-q" placeholder="Question (e.g. Apple)">
+                <input type="text" id="word-a" placeholder="Answer (e.g. Apfel)">
+                <button onclick="addVocabToSet()" class="btn-secondary">Add Word</button>
+            </div>
+            <div id="vocab-preview-list"></div>
+            <button id="start-game-btn" class="btn-primary">Start Learning</button>
+        </main>
+
+        <main id="quiz-screen" class="glass-container hidden">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div class="quiz-card">
+                <p class="label">Translate:</p>
+                <h2 id="display-q">Word</h2>
+                <input type="text" id="answer-input" placeholder="Your answer..." autocomplete="off">
+                <p id="feedback"></p>
+                <button id="submit-btn" class="btn-primary">Check</button>
+                <button id="next-btn" class="btn-primary hidden">Next</button>
+            </div>
+        </main>
+
+        <main id="results-screen" class="glass-container hidden">
+            <h2>Finished!</h2>
+            <div class="stats-card">
+                <p id="result-stats"></p>
+            </div>
+            <button id="retry-mistakes-btn" class="btn-secondary">Practice Mistakes</button>
+            <button onclick="location.reload()" class="btn-text">Home</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
