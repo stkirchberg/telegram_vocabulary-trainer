@@ -15,7 +15,6 @@ function showScreen(screenId) {
     if (target) target.classList.remove('hidden');
 }
 
-// SET MANAGEMENT 
 function renderSets() {
     const list = document.getElementById('set-list');
     if (!list) return;
@@ -47,11 +46,10 @@ function createNewSet() {
         input.value = "";
         editSet(title);
     } else if (sets[title]) {
-        alert("Dieses Set existiert bereits!");
+        alert("This set already exists!");
     }
 }
 
-// EDITOR
 function editSet(title) {
     activeSetKey = title;
     const titleDisplay = document.getElementById('editing-set-title');
@@ -79,7 +77,7 @@ function renderVocabPreview() {
     const vocabs = sets[activeSetKey] || [];
 
     list.innerHTML = vocabs.map(v => `
-        <div class="set-item" style="font-size:14px; border-bottom:1px solid #eee; padding:5px;">
+        <div class="set-item" style="font-size:14px; border-bottom:1px solid rgba(255,255,255,0.1); padding:10px;">
             <strong>${v.q}</strong>: ${v.a}
         </div>
     `).join('');
@@ -90,13 +88,12 @@ function renderVocabPreview() {
     }
 }
 
-// QUIZ LOGIC
 function startQuiz(title, retryMistakes = false) {
     activeSetKey = title;
     currentSessionCards = retryMistakes ? [...mistakes] : [...sets[title]];
     
     if (currentSessionCards.length === 0) {
-        alert("Keine Karten zum Lernen vorhanden!");
+        alert("No cards available to study!");
         return;
     }
     
@@ -129,11 +126,11 @@ document.getElementById('submit-btn').onclick = () => {
     const fb = document.getElementById('feedback');
 
     if (input === correct) {
-        fb.innerText = "Richtig!";
-        fb.style.color = "green";
+        fb.innerText = "Correct!";
+        fb.style.color = "#57d16a";
     } else {
-        fb.innerText = `Falsch! Lösung: ${currentCard.a}`;
-        fb.style.color = "red";
+        fb.innerText = `Wrong! Solution: ${currentCard.a}`;
+        fb.style.color = "#f26c6c";
         mistakes.push(currentCard);
     }
     document.getElementById('submit-btn').classList.add('hidden');
@@ -152,12 +149,12 @@ document.getElementById('next-btn').onclick = () => {
 function finishGame() {
     showScreen('results-screen');
     document.getElementById('result-stats').innerText = 
-        `Fertig! Fehler: ${mistakes.length} von ${currentSessionCards.length}`;
+        `Finished! Mistakes: ${mistakes.length} of ${currentSessionCards.length}`;
     
     const retryBtn = document.getElementById('retry-mistakes-btn');
     if (mistakes.length > 0) {
         retryBtn.classList.remove('hidden');
-        retryBtn.innerText = `Nur Fehler wiederholen (${mistakes.length})`;
+        retryBtn.innerText = `Retry Mistakes (${mistakes.length})`;
     } else {
         retryBtn.classList.add('hidden');
     }
