@@ -27,11 +27,11 @@ function renderSets() {
         div.innerHTML = `
             <div class="set-info">
                 <span>${title}</span>
-                <span class="card-count">${sets[title].length} Karten</span>
+                <span class="card-count">${sets[title].length} Cards</span>
             </div>
             <div class="button-group">
-                <button onclick="editSet('${title}')" class="btn-secondary">Bearbeiten</button>
-                <button onclick="startQuiz('${title}')" class="btn-primary">Starten</button>
+                <button onclick="editSet('${title}')" class="btn-secondary">Edit</button>
+                <button onclick="startQuiz('${title}')" class="btn-primary">Start</button>
             </div>
         `;
         list.appendChild(div);
