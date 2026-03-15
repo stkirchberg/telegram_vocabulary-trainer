@@ -13,10 +13,10 @@
         <main id="selection-screen" class="glass-container">
             <h1>My Sets</h1>
             <div class="input-group">
-                <input type="text" id="set-title-input" placeholder="New Set Name...">
+                <input type="text" id="set-title-input" placeholder="New Set...">
                 <button onclick="createNewSet()" class="btn-primary">+</button>
             </div>
-            <div id="set-list"></div>
+            <div id="set-list" class="set-list-wrapper"></div>
         </main>
 
         <main id="editor-screen" class="glass-container hidden">
@@ -46,12 +46,12 @@
         </main>
 
         <main id="results-screen" class="glass-container hidden">
-            <h2>Finished!</h2>
+            <h2>Session Complete</h2>
             <div class="stats-card">
                 <p id="result-stats"></p>
             </div>
             <button id="retry-mistakes-btn" class="btn-secondary">Practice Mistakes</button>
-            <button onclick="location.reload()" class="btn-text">Home</button>
+            <button onclick="location.reload()" class="btn-text">Back to Home</button>
         </main>
     </div>
 
